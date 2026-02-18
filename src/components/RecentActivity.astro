@@ -1,0 +1,31 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+import { recentActivity } from "../data/mock-data";
+---
+
+<WidgetWrapper title="Recent Activity" moreLink="https://myspeedpuzzling.com/player/simona-mikesova/activity" moreText="More at MySpeedPuzzling →">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    {recentActivity.map((entry) => (
+      <div class="bg-white rounded-xl border border-slate-100 overflow-hidden hover:shadow-md transition-shadow">
+        <!-- Gradient placeholder image -->
+        <div class={`h-24 bg-gradient-to-br ${entry.gradient} relative`}>
+          <span class="absolute top-2 right-2 bg-white/90 text-[10px] font-semibold px-2 py-0.5 rounded-full text-slate-600">
+            {entry.category}
+          </span>
+        </div>
+        <div class="p-3">
+          <div class="text-sm font-medium text-slate-700 truncate">{entry.puzzleName}</div>
+          <div class="text-xs text-slate-400 mb-2">{entry.brand}</div>
+          <div class="flex items-baseline justify-between">
+            <span class="time-display text-sm font-bold text-slate-800">{entry.time}</span>
+            <span class="text-xs text-slate-400">{entry.pieces}pc</span>
+          </div>
+          <div class="flex items-center justify-between mt-1">
+            <span class="text-xs text-emerald font-medium">{entry.ppm} ppm</span>
+            <span class="text-[10px] text-slate-400">{entry.daysAgo}d ago</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</WidgetWrapper>

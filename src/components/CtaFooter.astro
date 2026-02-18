@@ -1,0 +1,34 @@
+---
+import { profile } from "../data/mock-data";
+---
+
+<div class="widget-fade-in">
+  <!-- CTA Banner -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
+    <div class="bg-gradient-to-br from-coral-400 to-coral-500 rounded-xl px-6 py-10 text-center relative overflow-hidden">
+      <div class="noise-overlay absolute inset-0 pointer-events-none"></div>
+      <div class="relative z-10">
+        <h2 class="font-display font-bold text-white text-xl sm:text-2xl mb-2">Want the full picture?</h2>
+        <p class="text-white/70 text-sm mb-5 max-w-md mx-auto">See complete stats, all results, and more on MySpeedPuzzling</p>
+        <a
+          href={profile.profileUrl}
+          class="inline-flex items-center gap-2 bg-white text-coral-500 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95"
+        >
+          View full profile
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="border-t border-slate-200 bg-white px-4 sm:px-6 py-6 text-center">
+    <p class="text-slate-400 text-sm">
+      Powered by
+      <a href="https://myspeedpuzzling.com" class="text-coral-400 hover:text-coral-500 font-medium">MySpeedPuzzling</a>
+    </p>
+    <p class="text-slate-300 text-xs mt-1">&copy; {new Date().getFullYear()} MySpeedPuzzling. All rights reserved.</p>
+  </div>
+</div>

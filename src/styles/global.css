@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coral-50: #FEF2F2;
+  --color-coral-100: #FDE8E7;
+  --color-coral-200: #FBC8C7;
+  --color-coral-300: #F7A5A3;
+  --color-coral-400: #EC726F;
+  --color-coral-500: #E04E4A;
+  --color-coral-600: #C93330;
+
+  --color-gold: #FBBF24;
+  --color-silver: #9CA3AF;
+  --color-bronze: #CD7F32;
+  --color-emerald: #34D399;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Animated avatar ring */
+@keyframes avatar-ring {
+  from { --ring-angle: 0deg; }
+  to { --ring-angle: 360deg; }
+}
+
+@property --ring-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.avatar-ring {
+  background: conic-gradient(from var(--ring-angle), #EC726F, #FBBF24, #34D399, #EC726F);
+  animation: avatar-ring 3s linear infinite;
+}
+
+/* Section fade-in */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.widget-fade-in {
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+.widget-fade-in:nth-child(2) { animation-delay: 0.05s; }
+.widget-fade-in:nth-child(3) { animation-delay: 0.1s; }
+.widget-fade-in:nth-child(4) { animation-delay: 0.15s; }
+.widget-fade-in:nth-child(5) { animation-delay: 0.2s; }
+.widget-fade-in:nth-child(6) { animation-delay: 0.25s; }
+.widget-fade-in:nth-child(7) { animation-delay: 0.3s; }
+.widget-fade-in:nth-child(8) { animation-delay: 0.35s; }
+
+/* Hero noise overlay */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Monospace time styling */
+.time-display {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab button active state */
+.tab-btn {
+  transition: all 0.2s ease;
+}
+.tab-btn[data-active="true"] {
+  background-color: #EC726F;
+  color: white;
+}
+.tab-btn[data-active="false"] {
+  background-color: transparent;
+  color: #64748b;
+}
+.tab-btn[data-active="false"]:hover {
+  background-color: #FDE8E7;
+  color: #EC726F;
+}

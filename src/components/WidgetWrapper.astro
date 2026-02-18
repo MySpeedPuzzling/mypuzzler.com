@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  moreLink?: string;
+  moreText?: string;
+}
+
+const { title, moreLink, moreText = "More →" } = Astro.props;
+---
+
+<div class="widget-fade-in bg-white rounded-xl border border-slate-200 overflow-hidden">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-slate-100">
+    <h2 class="font-display font-semibold text-slate-800 text-base">{title}</h2>
+    {moreLink && (
+      <a
+        href={moreLink}
+        class="text-coral-400 text-sm font-medium hover:text-coral-500 transition-colors"
+      >
+        {moreText}
+      </a>
+    )}
+  </div>
+  <div class="p-5">
+    <slot />
+  </div>
+</div>

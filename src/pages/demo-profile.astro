@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import ProfileCard from "../components/ProfileCard.astro";
+import StatsBar from "../components/StatsBar.astro";
+import TopResults from "../components/TopResults.astro";
+import RecentActivity from "../components/RecentActivity.astro";
+import TopRankingsWidget from "../components/TopRankingsWidget.astro";
+import CollectionWidget from "../components/CollectionWidget.astro";
+import PersonalBestChart from "../components/PersonalBestChart.astro";
+import MonthlyActivityChart from "../components/MonthlyActivityChart.astro";
+import PPMTrendChart from "../components/PPMTrendChart.astro";
+import CtaFooter from "../components/CtaFooter.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <ProfileCard />
+  <StatsBar />
+
+  <!-- Widget grid -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <PersonalBestChart />
+      <PPMTrendChart />
+      <TopResults />
+      <TopRankingsWidget />
+      <div class="lg:col-span-2">
+        <MonthlyActivityChart />
+      </div>
+      <div class="lg:col-span-2">
+        <RecentActivity />
+      </div>
+      <CollectionWidget />
+    </div>
+  </div>
+
+  <CtaFooter />
+</BaseLayout>

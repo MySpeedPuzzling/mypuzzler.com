@@ -1,0 +1,69 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+import { topResults } from "../data/mock-data";
+
+const tabs = ["solo", "duo", "team"] as const;
+---
+
+<WidgetWrapper title="Top Results" moreLink="https://myspeedpuzzling.com/player/simona-mikesova/results" moreText="See all results →">
+  <!-- Tabs -->
+  <div class="flex gap-1 bg-slate-100 rounded-lg p-1 mb-4">
+    {tabs.map((tab, i) => (
+      <button
+        class="tab-btn flex-1 py-1.5 text-sm font-medium rounded-md capitalize"
+        data-tab-group="results"
+        data-tab={tab}
+        data-active={i === 0 ? "true" : "false"}
+      >
+        {tab}
+      </button>
+    ))}
+  </div>
+
+  <!-- Tab panels -->
+  {tabs.map((tab, i) => (
+    <div
+      class:list={["space-y-2", { hidden: i !== 0 }]}
+      data-panel-group="results"
+      data-panel={tab}
+    >
+      {topResults[tab].map((entry, idx) => (
+        <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
+          <div class="shrink-0 w-6 text-center font-display font-bold text-slate-400 text-sm">
+            #{idx + 1}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-sm font-medium text-slate-700 truncate">{entry.puzzleName}</div>
+            <div class="text-xs text-slate-400">{entry.pieces}pc</div>
+          </div>
+          <div class="text-right">
+            <div class="time-display font-bold text-slate-800 text-sm">{entry.time}</div>
+            <div class="text-xs text-emerald font-medium">{entry.ppm} ppm</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  ))}
+</WidgetWrapper>
+
+<script>
+  function initTabs(groupName: string) {
+    const buttons = document.querySelectorAll<HTMLButtonElement>(`[data-tab-group="${groupName}"]`);
+    const panels = document.querySelectorAll<HTMLElement>(`[data-panel-group="${groupName}"]`);
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const tab = btn.dataset.tab!;
+
+        buttons.forEach(b => b.dataset.active = "false");
+        btn.dataset.active = "true";
+
+        panels.forEach(p => {
+          p.classList.toggle("hidden", p.dataset.panel !== tab);
+        });
+      });
+    });
+  }
+
+  initTabs("results");
+</script>
