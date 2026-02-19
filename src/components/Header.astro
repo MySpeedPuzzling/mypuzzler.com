@@ -3,15 +3,19 @@
 
 <header class="bg-white border-b border-slate-200">
   <div class="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 h-14">
-    <a href="https://myspeedpuzzling.com" class="flex items-center gap-2">
+    <a href="/" class="flex items-center gap-2.5">
       <img
         src="https://myspeedpuzzling.com/img/speedpuzzling-logo.svg"
         alt="MySpeedPuzzling"
         class="h-9"
+        width="36"
+        height="36"
       />
+      <div class="flex flex-col leading-none">
+        <span class="font-display font-bold text-slate-900 text-base tracking-tight">MyPuzzler</span>
+        <span class="text-slate-400 text-[11px] font-medium">by MySpeedPuzzling</span>
+      </div>
     </a>
-    <div class="flex items-center gap-2">
-      <span class="font-display font-semibold text-slate-800 text-sm tracking-tight">MyPuzzler</span>
-    </div>
+    <slot />
   </div>
 </header>
