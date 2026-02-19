@@ -4,14 +4,36 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  canonicalPath?: string;
 }
 
 const {
-  title = "Simona Mikešová | MyPuzzler",
-  description = "Speed puzzler profile - top results, stats, and collection",
+  title = "MyPuzzler — Your Puzzle Profile | Track Speed Puzzling Stats & Collection",
+  description = "Create your free puzzle profile to track solve times, share speed puzzling stats, and showcase your collection. The ultimate profile page for every puzzler.",
+  canonicalPath,
 } = Astro.props;
 
+const siteUrl = "https://mypuzzler.com";
+const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : Astro.url.href;
 const ogImage = "https://myspeedpuzzling.com/og/mypuzzler-default.png";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MyPuzzler",
+  "alternateName": "MyPuzzler - Puzzle Profile",
+  "url": siteUrl,
+  "description": "Your personal puzzle profile to track speed puzzling times, share stats, and showcase your collection.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MySpeedPuzzling",
+    "url": "https://myspeedpuzzling.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://myspeedpuzzling.com/img/speedpuzzling-logo.svg"
+    }
+  }
+};
 ---
 
 <!doctype html>
@@ -20,11 +42,18 @@ const ogImage = "https://myspeedpuzzling.com/og/mypuzzler-default.png";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#EC726F" />
+
+    <link rel="canonical" href={canonicalUrl} />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:type" content="profile" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="MyPuzzler" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -32,6 +61,7 @@ const ogImage = "https://myspeedpuzzling.com/og/mypuzzler-default.png";
     <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +69,8 @@ const ogImage = "https://myspeedpuzzling.com/og/mypuzzler-default.png";
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
     <title>{title}</title>
   </head>

@@ -3,225 +3,228 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="MyPuzzler — Your Speed Puzzling Profile"
-  description="Your personal public speed puzzling profile. Showcase your best times, stats, rankings, and collection. Powered by MySpeedPuzzling."
+  title="MyPuzzler — Your Puzzle Profile | Track Speed Puzzling Stats & Collection"
+  description="Create your free puzzle profile to track solve times, share speed puzzling stats, and showcase your collection. The ultimate profile page for every puzzler."
+  canonicalPath="/"
 >
   <!-- Nav -->
-  <header class="bg-white border-b border-slate-200">
+  <nav class="bg-white border-b border-slate-200" aria-label="Main navigation">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 h-14">
       <div class="flex items-center gap-2">
         <img
           src="https://myspeedpuzzling.com/img/speedpuzzling-logo.svg"
-          alt="MySpeedPuzzling"
-          class="h-7"
+          alt="MySpeedPuzzling — Speed Puzzling Community"
+          class="h-9"
+          width="154"
+          height="36"
         />
       </div>
       <div class="flex items-center gap-3">
         <span class="font-display font-semibold text-slate-800 text-sm tracking-tight">MyPuzzler</span>
-        <span class="bg-coral-100 text-coral-400 text-[10px] font-semibold px-1.5 py-0.5 rounded-full uppercase tracking-wider">beta</span>
         <a href="/demo-profile" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 bg-coral-400 text-white rounded-lg text-sm font-medium hover:bg-coral-500 transition-colors">
           See demo profile
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
         </a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero -->
-  <section class="relative bg-gradient-to-br from-coral-400 via-coral-400 to-coral-500 overflow-hidden">
-    <div class="noise-overlay absolute inset-0 pointer-events-none"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 text-center">
-      <div class="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 mb-6">
-        <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-        <span class="text-white text-sm font-medium">Now in beta</span>
-      </div>
-      <h1 class="font-display font-bold text-white text-4xl sm:text-6xl leading-tight max-w-3xl mx-auto">
-        Your speed puzzling profile, <span class="text-white/80">shareable everywhere</span>
-      </h1>
-      <p class="text-white/90 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
-        MyPuzzler is your personal public profile for speed puzzling. Showcase your best times, track your progress, and share your achievements with the community.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-        <a
-          href="/demo-profile"
-          class="inline-flex items-center gap-2 bg-white text-coral-400 font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
-        >
-          See example profile
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-        </a>
-        <a
-          href="https://myspeedpuzzling.com/register"
-          class="inline-flex items-center gap-2 text-white border-2 border-white/40 font-semibold px-6 py-3.5 rounded-xl hover:bg-white/10 transition-all text-base"
-        >
-          Create your profile
-        </a>
-      </div>
-    </div>
-    <!-- Decorative bottom wave -->
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" preserveAspectRatio="none">
-        <path d="M0 80V40C240 0 480 60 720 40S1200 0 1440 40V80H0Z" fill="#f8fafc" />
-      </svg>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-    <div class="text-center mb-14">
-      <h2 class="font-display font-bold text-slate-900 text-3xl sm:text-4xl">Everything a puzzler needs</h2>
-      <p class="text-slate-500 text-lg mt-3 max-w-xl mx-auto">One link to share your entire puzzling identity. Clean, fast, and always up to date.</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Feature 1 -->
-      <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-        <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+  <main>
+    <!-- Hero -->
+    <section class="relative hero-gradient overflow-hidden" aria-labelledby="hero-heading">
+      <div class="noise-overlay absolute inset-0 pointer-events-none"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-14 sm:pt-20 sm:pb-28 text-center">
+        <h1 id="hero-heading" class="font-display font-bold text-white text-4xl sm:text-6xl leading-tight max-w-3xl mx-auto">
+          Your puzzle profile, <span class="text-white/80">shareable everywhere</span>
+        </h1>
+        <p class="text-white/90 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
+          Whether you race the clock or puzzle at your own pace — MyPuzzler is your personal profile to track progress, share your speed puzzling stats, and connect with fellow puzzle lovers.
+        </p>
+        <div class="inline-flex items-center bg-slate-900/80 backdrop-blur-sm rounded-lg px-5 py-3 mt-8 border border-white/10">
+          <span class="font-mono text-white/50 text-sm sm:text-base select-none">mypuzzler.com/</span><span class="font-mono text-white text-sm sm:text-base font-medium">your-name</span>
         </div>
-        <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Personal Bests</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Your top 3 times for Solo, Duo, and Team — the highlights you're proud of.</p>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22" /></svg>
-        </div>
-        <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Progress Charts</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Watch your speed improve over time. PB trends, PPM growth, and monthly activity at a glance.</p>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-        <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.896m5.25-6.624a6.023 6.023 0 00-2.77.896" /></svg>
-        </div>
-        <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Top Rankings</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Show off your leaderboard positions. Gold, silver, bronze — your competitive highlights.</p>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
-        </div>
-        <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Puzzle Collection</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Sell, swap, or wishlist your puzzles. Let the community know what you have and want.</p>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
-        </div>
-        <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">One Link to Share</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Drop your MyPuzzler link in your bio, on forums, or send it to fellow puzzlers.</p>
-      </div>
-
-      <!-- Feature 6 -->
-      <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-        <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 010-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-        </div>
-        <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Customizable Widgets</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Toggle sections on or off, reorder widgets. Your profile, your way. <span class="text-coral-400 font-medium">Coming soon.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="bg-white border-y border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-      <div class="text-center mb-14">
-        <h2 class="font-display font-bold text-slate-900 text-3xl sm:text-4xl">How it works</h2>
-        <p class="text-slate-500 text-lg mt-3">Three steps to your puzzling profile.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-3xl mx-auto">
-        <div class="text-center">
-          <div class="w-12 h-12 bg-coral-400 text-white rounded-full flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">1</div>
-          <h3 class="font-display font-semibold text-slate-800 mb-1">Sign up</h3>
-          <p class="text-slate-500 text-sm">Create a free account on MySpeedPuzzling and start logging your solves.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 bg-coral-400 text-white rounded-full flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">2</div>
-          <h3 class="font-display font-semibold text-slate-800 mb-1">Puzzle & track</h3>
-          <p class="text-slate-500 text-sm">Log your times, compete on leaderboards, build your collection.</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 bg-coral-400 text-white rounded-full flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">3</div>
-          <h3 class="font-display font-semibold text-slate-800 mb-1">Share your profile</h3>
-          <p class="text-slate-500 text-sm">Get your MyPuzzler link and share it anywhere — social, forums, events.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Profile preview callout -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-    <div class="bg-slate-900 rounded-2xl overflow-hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div class="p-8 sm:p-12">
-          <h2 class="font-display font-bold text-white text-2xl sm:text-3xl leading-tight">See what a MyPuzzler profile looks like</h2>
-          <p class="text-slate-400 mt-4 leading-relaxed">Charts tracking your improvement, personal bests, leaderboard rankings, your puzzle collection — all in one clean page.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <a
             href="/demo-profile"
-            class="inline-flex items-center gap-2 bg-coral-400 text-white font-semibold px-5 py-3 rounded-xl mt-6 hover:bg-coral-500 transition-colors active:scale-95"
+            class="inline-flex items-center gap-2 bg-white text-coral-400 font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
           >
-            View demo profile
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            See example profile
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+          </a>
+          <a
+            href="https://myspeedpuzzling.com/register"
+            class="inline-flex items-center gap-2 text-white border-2 border-white/40 font-semibold px-6 py-3.5 rounded-xl hover:bg-white/10 transition-all text-base"
+          >
+            Create your puzzle profile
           </a>
         </div>
-        <div class="hidden lg:block p-8 relative">
-          <!-- Mini profile preview mockup -->
-          <div class="bg-slate-800 rounded-xl p-5 shadow-2xl transform rotate-1">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-coral-300 to-coral-500"></div>
-              <div>
-                <div class="h-3 w-28 bg-slate-600 rounded"></div>
-                <div class="h-2 w-20 bg-slate-700 rounded mt-1.5"></div>
+      </div>
+      <!-- Decorative bottom wave -->
+      <div class="absolute -bottom-px left-0 right-0">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 80V40C240 0 480 60 720 40S1200 0 1440 40V80H0Z" fill="#f8fafc" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24" aria-labelledby="features-heading">
+      <div class="text-center mb-14">
+        <h2 id="features-heading" class="font-display font-bold text-slate-900 text-3xl sm:text-4xl">Everything a puzzler needs to track & share</h2>
+        <p class="text-slate-500 text-lg mt-3 max-w-xl mx-auto">One link to share your entire puzzling world. Clean, fast, and always up to date.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+          </div>
+          <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Speed Puzzle Personal Bests</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Show off your fastest puzzle solve times for Solo, Duo, and Team — the highlights you're proud of.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22" /></svg>
+          </div>
+          <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Track Your Puzzling Progress</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Watch your speed improve over time. Track personal best trends, pieces-per-minute growth, and monthly puzzling activity at a glance.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.896m5.25-6.624a6.023 6.023 0 00-2.77.896" /></svg>
+          </div>
+          <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Puzzle Speed Rankings</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Display your leaderboard positions with pride. Gold, silver, bronze — your competitive puzzling highlights, front and center.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+          </div>
+          <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Puzzle Collection Showcase</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Sell, swap, or wishlist your puzzles. Let the puzzling community know what's in your collection and what you're looking for.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
+          </div>
+          <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Share Your Puzzle Profile</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Drop your MyPuzzler link in your bio, on forums, or send it to fellow puzzlers. One link, your whole puzzling story.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 010-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          </div>
+          <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Customizable Profile Widgets</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Toggle sections on or off, reorder widgets. Your puzzle profile, your way. <span class="text-coral-400 font-medium">Coming soon.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="bg-white border-y border-slate-200" aria-labelledby="how-it-works-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <div class="text-center mb-14">
+          <h2 id="how-it-works-heading" class="font-display font-bold text-slate-900 text-3xl sm:text-4xl">Start puzzling in three easy steps</h2>
+          <p class="text-slate-500 text-lg mt-3">From sign-up to sharing your puzzle profile — it only takes a minute.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-3xl mx-auto">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-coral-400 text-white rounded-full flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">1</div>
+            <h3 class="font-display font-semibold text-slate-800 mb-1">Sign up free</h3>
+            <p class="text-slate-500 text-sm">Create a free account on MySpeedPuzzling and start logging your puzzle solves.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-coral-400 text-white rounded-full flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">2</div>
+            <h3 class="font-display font-semibold text-slate-800 mb-1">Puzzle & track</h3>
+            <p class="text-slate-500 text-sm">Log your speed puzzling times, climb the leaderboards, and build your puzzle collection.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-coral-400 text-white rounded-full flex items-center justify-center font-display font-bold text-xl mx-auto mb-4">3</div>
+            <h3 class="font-display font-semibold text-slate-800 mb-1">Share your profile</h3>
+            <p class="text-slate-500 text-sm">Grab your MyPuzzler link and share it anywhere — social media, puzzling forums, or events.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile preview callout -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24" aria-labelledby="preview-heading">
+      <div class="bg-slate-900 rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div class="p-8 sm:p-12">
+            <h2 id="preview-heading" class="font-display font-bold text-white text-2xl sm:text-3xl leading-tight">See what your puzzle profile looks like</h2>
+            <p class="text-slate-400 mt-4 leading-relaxed">Charts tracking your speed puzzling improvement, personal bests, leaderboard rankings, your puzzle collection — all in one clean, shareable profile page.</p>
+            <a
+              href="/demo-profile"
+              class="inline-flex items-center gap-2 bg-coral-400 text-white font-semibold px-5 py-3 rounded-xl mt-6 hover:bg-coral-500 transition-colors active:scale-95"
+            >
+              View demo puzzle profile
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+          </div>
+          <div class="hidden lg:block p-8 relative">
+            <!-- Mini profile preview mockup -->
+            <div class="bg-slate-800 rounded-xl p-5 shadow-2xl transform rotate-1">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-coral-300 to-coral-500"></div>
+                <div>
+                  <div class="h-3 w-28 bg-slate-600 rounded"></div>
+                  <div class="h-2 w-20 bg-slate-700 rounded mt-1.5"></div>
+                </div>
               </div>
-            </div>
-            <div class="grid grid-cols-4 gap-2 mb-4">
-              <div class="h-12 bg-slate-700 rounded-lg"></div>
-              <div class="h-12 bg-slate-700 rounded-lg"></div>
-              <div class="h-12 bg-slate-700 rounded-lg"></div>
-              <div class="h-12 bg-slate-700 rounded-lg"></div>
-            </div>
-            <div class="h-24 bg-slate-700 rounded-lg mb-3"></div>
-            <div class="grid grid-cols-2 gap-2">
-              <div class="h-16 bg-slate-700 rounded-lg"></div>
-              <div class="h-16 bg-slate-700 rounded-lg"></div>
+              <div class="grid grid-cols-4 gap-2 mb-4">
+                <div class="h-12 bg-slate-700 rounded-lg"></div>
+                <div class="h-12 bg-slate-700 rounded-lg"></div>
+                <div class="h-12 bg-slate-700 rounded-lg"></div>
+                <div class="h-12 bg-slate-700 rounded-lg"></div>
+              </div>
+              <div class="h-24 bg-slate-700 rounded-lg mb-3"></div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="h-16 bg-slate-700 rounded-lg"></div>
+                <div class="h-16 bg-slate-700 rounded-lg"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA section -->
-  <section class="relative bg-gradient-to-br from-coral-400 via-coral-400 to-coral-500 overflow-hidden">
-    <div class="noise-overlay absolute inset-0 pointer-events-none"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
-      <h2 class="font-display font-bold text-white text-3xl sm:text-4xl">Don't have an account yet?</h2>
-      <p class="text-white/90 text-lg mt-4 max-w-xl mx-auto">Join thousands of speed puzzlers on MySpeedPuzzling. It's free to sign up and start tracking your times.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-        <a
-          href="https://myspeedpuzzling.com/register"
-          class="inline-flex items-center gap-2 bg-white text-coral-400 font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
-        >
-          Sign up for free
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-        </a>
-        <a
-          href="https://myspeedpuzzling.com"
-          class="inline-flex items-center gap-2 text-white border-2 border-white/40 font-semibold px-6 py-3.5 rounded-xl hover:bg-white/10 transition-all text-base"
-        >
-          Learn more about MySpeedPuzzling
-        </a>
+    <!-- CTA section -->
+    <section class="relative bg-gradient-to-br from-coral-400 via-coral-400 to-coral-500 overflow-hidden" aria-labelledby="cta-heading">
+      <div class="noise-overlay absolute inset-0 pointer-events-none"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center">
+        <h2 id="cta-heading" class="font-display font-bold text-white text-3xl sm:text-4xl">Ready to track your puzzling journey?</h2>
+        <p class="text-white/90 text-lg mt-4 max-w-xl mx-auto">Join thousands of puzzle enthusiasts on MySpeedPuzzling. Sign up free and start building your personal puzzle profile today.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <a
+            href="https://myspeedpuzzling.com/register"
+            class="inline-flex items-center gap-2 bg-white text-coral-400 font-semibold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 text-base"
+          >
+            Create your free profile
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+          </a>
+          <a
+            href="https://myspeedpuzzling.com"
+            class="inline-flex items-center gap-2 text-white border-2 border-white/40 font-semibold px-6 py-3.5 rounded-xl hover:bg-white/10 transition-all text-base"
+          >
+            Learn more about MySpeedPuzzling
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-white border-t border-slate-200 px-4 sm:px-6 py-8">
@@ -231,8 +234,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           src="https://myspeedpuzzling.com/img/speedpuzzling-logo.svg"
           alt="MySpeedPuzzling"
           class="h-5"
+          width="86"
+          height="20"
         />
-        <span class="text-slate-300 mx-1">·</span>
+        <span class="text-slate-300 mx-1">&middot;</span>
         <span class="font-display font-semibold text-slate-500 text-sm">MyPuzzler</span>
       </div>
       <p class="text-slate-400 text-sm">&copy; {new Date().getFullYear()} MySpeedPuzzling. All rights reserved.</p>
