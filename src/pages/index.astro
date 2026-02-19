@@ -40,8 +40,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="text-white/90 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
           Whether you race the clock or puzzle at your own pace — MyPuzzler is your personal profile to track progress, share your speed puzzling stats, and connect with fellow puzzle lovers.
         </p>
-        <div class="inline-flex items-center bg-slate-900/80 backdrop-blur-sm rounded-lg px-5 py-3 mt-8 border border-white/10">
-          <span class="font-mono text-white/50 text-sm sm:text-base select-none">mypuzzler.com/</span><span class="font-mono text-white text-sm sm:text-base font-medium">your-name</span>
+        <div class="inline-flex items-center bg-white/95 backdrop-blur-sm rounded-full px-4 sm:px-5 py-2.5 mt-8 shadow-lg shadow-black/10">
+          <svg class="w-3.5 h-3.5 text-slate-400 mr-2.5 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" /></svg>
+          <span class="font-mono text-slate-400 text-sm sm:text-base select-none">mypuzzler.com/</span><span class="inline-block text-left" style="width:15ch"><span id="typed-name" class="font-mono text-slate-800 text-sm sm:text-base font-medium"></span><span id="typed-cursor" class="font-mono text-slate-800 text-sm sm:text-base font-medium animate-blink">|</span></span>
         </div>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <a
@@ -86,8 +87,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <!-- Feature 2 -->
         <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22" /></svg>
+          <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 015.814-5.518l2.74-1.22" /></svg>
           </div>
           <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Track Your Puzzling Progress</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Watch your speed improve over time. Track personal best trends, pieces-per-minute growth, and monthly puzzling activity at a glance.</p>
@@ -95,8 +96,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <!-- Feature 3 -->
         <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.896m5.25-6.624a6.023 6.023 0 00-2.77.896" /></svg>
+          <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-2.77.896m5.25-6.624a6.023 6.023 0 00-2.77.896" /></svg>
           </div>
           <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Puzzle Speed Rankings</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Display your leaderboard positions with pride. Gold, silver, bronze — your competitive puzzling highlights, front and center.</p>
@@ -104,8 +105,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <!-- Feature 4 -->
         <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+          <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
           </div>
           <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Puzzle Collection Showcase</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Sell, swap, or wishlist your puzzles. Let the puzzling community know what's in your collection and what you're looking for.</p>
@@ -113,8 +114,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <!-- Feature 5 -->
         <div class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
+          <div class="w-10 h-10 bg-coral-50 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" /></svg>
           </div>
           <h3 class="font-display font-semibold text-slate-800 text-lg mb-1">Share Your Puzzle Profile</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Drop your MyPuzzler link in your bio, on forums, or send it to fellow puzzlers. One link, your whole puzzling story.</p>
@@ -243,4 +244,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="text-slate-400 text-sm">&copy; {new Date().getFullYear()} MySpeedPuzzling. All rights reserved.</p>
     </div>
   </footer>
+  <script>
+    const names = ["simonka", "wiktor", "emilia", "tereza", "chiara", "donnalouise", "karen", "hanna", "michelle", "maky"];
+    const el = document.getElementById("typed-name")!;
+    let nameIdx = 0;
+
+    async function sleep(ms: number) {
+      return new Promise((r) => setTimeout(r, ms));
+    }
+
+    async function typeText(text: string) {
+      for (const ch of text) {
+        el.textContent += ch;
+        await sleep(80 + Math.random() * 60);
+      }
+    }
+
+    async function deleteText() {
+      while (el.textContent!.length > 0) {
+        el.textContent = el.textContent!.slice(0, -1);
+        await sleep(40 + Math.random() * 30);
+      }
+    }
+
+    async function loop() {
+      while (true) {
+        await typeText(names[nameIdx]);
+        await sleep(2000);
+        await deleteText();
+        await sleep(400);
+        nameIdx = (nameIdx + 1) % names.length;
+      }
+    }
+
+    loop();
+  </script>
 </BaseLayout>
